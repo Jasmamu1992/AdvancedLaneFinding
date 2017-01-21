@@ -16,7 +16,7 @@ The goals / steps of this project are the following:
 [image1]: ./output_images/CameraCalibration/CameraCalibration.png "Undistorted"
 [image2]: ./output_images/Undistort/Undistort1.png "Undistorted Test Images"
 [image3]: ./output_images/HLS_Sobel_Thresholded/HLS_Sobel_Thresholded1.png "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
+[image4]: ./output_images/PerspectiveTransform/PerspectiveTransform1.png "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video.mp4 "Video"
@@ -25,7 +25,7 @@ The goals / steps of this project are the following:
 
 ###Camera Calibration
 
-The code for this step is contained in the second code cell of the IPython notebook located in "./AdvancedLaneFinding/AdvLaneFinding.ipynb" 
+The code for this step is contained in the code cell 2 and 3 of the IPython notebook located in "./AdvancedLaneFinding/AdvLaneFinding.ipynb" 
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
 
@@ -38,7 +38,9 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 ####1. Provide an example of a distortion-corrected image.
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
 You can find other undistorted images at [UNDISTORTED IMAGES](https://github.com/Jasmamu1992/AdvancedLaneFinding/tree/master/output_images/Undistort)
+
 ![alt text][image2]
+
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at code cells 5,6,7 in `./AdvancedLaneFinding/AdvLaneFinding.ipynb`).  Here's an example of my output for this step.
 
@@ -46,31 +48,23 @@ I used a combination of color and gradient thresholds to generate a binary image
 
 ####3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
-The code for my perspective transform includes a function called `warper()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
+The code for my perspective transform includes a function called `perspective_transform()`, which appears in code cell 4 in the file `./AdvancedLaneFinding/AdvLaneFinding.ipynb`.  The `perspective_transform()` function takes as inputs an image (`img`), as well as Perspective_Transform Matrix (`M`) which is obtained using `cv2.getPerspectiveTransform(src, dst)`.  I chose the hardcode the source and destination points in the following manner:
 
 ```
-src = np.float32(
-    [[(img_size[0] / 2) - 55, img_size[1] / 2 + 100],
-    [((img_size[0] / 6) - 10), img_size[1]],
-    [(img_size[0] * 5 / 6) + 60, img_size[1]],
-    [(img_size[0] / 2 + 55), img_size[1] / 2 + 100]])
-dst = np.float32(
-    [[(img_size[0] / 4), 0],
-    [(img_size[0] / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), 0]])
+src = np.float32([[557,460],[732,460],[100,720],[1200,720]])
+dst = np.float32([[0,0],[1200,0],[0,720],[1200,720]])
 
 ```
 This resulted in the following source and destination points:
 
 | Source        | Destination   | 
 |:-------------:|:-------------:| 
-| 585, 460      | 320, 0        | 
-| 203, 720      | 320, 720      |
-| 1127, 720     | 960, 720      |
-| 695, 460      | 960, 0        |
+| 557, 460      | 0, 0          | 
+| 732, 460      | 1200, 0       |
+| 100, 720      | 0, 720        |
+| 1200, 720     | 1200, 720     |
 
-I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
+I tested the Perspective transform on the test images as follows
 
 ![alt text][image4]
 
