@@ -14,8 +14,8 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./output_images/CameraCalibration/CameraCalibration.png "Undistorted"
-[image2]: ./output_images/Undistort/Undistort1.png "Road Transformed"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
+[image2]: ./output_images/Undistort/Undistort1.png "Undistorted Test Images"
+[image3]: ./output_images/HLS_Sobel_Thresholded/HLS_Sobel_Thresholded1.png "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
@@ -40,7 +40,7 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 You can find other undistorted images at [UNDISTORTED IMAGES](https://github.com/Jasmamu1992/AdvancedLaneFinding/tree/master/output_images/Undistort)
 ![alt text][image2]
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at code cells 5,6,7 in `./AdvancedLaneFinding/AdvLaneFinding.ipynb`).  Here's an example of my output for this step.
 
 ![alt text][image3]
 
