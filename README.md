@@ -98,4 +98,6 @@ Here's a [link to my video result](./project_video_out.mp4)
 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.
+I felt the most difficult part of this project is in getting the sobel and HLS thresholding parameters right and to implement the histogram based method for detecting left and right lane points. 
+
+When I tested the pipeline I implemented on challenge_video, I found that the pipeline is mostly failing in sobel and HLS thresholding part, because it is picking up lot of unwanted edges as well. I think the sobel and HLS thresholding parameters should be adaptively changed based on the number of peaks that we are observing in the hostogram. The parameters should be automatically adjusted in a way to obtain only two strong peaks in the histogram
