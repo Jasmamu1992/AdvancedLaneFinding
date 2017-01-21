@@ -17,7 +17,7 @@ The goals / steps of this project are the following:
 [image2]: ./output_images/Undistort/Undistort1.png "Undistorted Test Images"
 [image3]: ./output_images/HLS_Sobel_Thresholded/HLS_Sobel_Thresholded1.png "Binary Example"
 [image4]: ./output_images/PerspectiveTransform/PerspectiveTransform1.png "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
+[image5]: .output_images/LaneDetection_CurveFitting/LaneDetection_CurveFitting1.png "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video.mp4 "Video"
 
@@ -70,7 +70,7 @@ I tested the Perspective transform on the test images as follows
 
 ####4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+I divided the warped image into 6 parts and took histogram for each of theses parts. Then I found the peaks in the histogram and started searching for any line points situated araound the peaks. Then I differentiated the points to leftlanepoints and rightlane points based on their position in the image(all the implemetation is done in a function called `Hist()` which can be found in code cell 8 of `./AdvancedLaneFinding/AdvLaneFinding.ipynb`) and fit my lane lines with a 2nd order polynomial kinda like this:
 
 ![alt text][image5]
 
