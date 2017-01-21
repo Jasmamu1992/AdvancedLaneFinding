@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 [image3]: ./output_images/HLS_Sobel_Thresholded/HLS_Sobel_Thresholded1.png "Binary Example"
 [image4]: ./output_images/PerspectiveTransform/PerspectiveTransform1.png "Warp Example"
 [image5]: ./output_images/LaneDetection_CurveFitting/LaneDetection_CurveFitting1.png "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
+[image6]: ./output_images/FinalProcessedImages/ProcessedImage1.png "Output"
 [video1]: ./project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -76,11 +76,11 @@ I divided the warped image into 6 parts and took histogram for each of theses pa
 
 ####5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I did this in lines # through # in my code in `my_other_file.py`
+I did this in code cell 8 in `./AdvancedLaneFinding/AdvLaneFinding.ipynb`
 
 ####6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+I implemented this step code cell 10 in `./AdvancedLaneFinding/AdvLaneFinding.ipynb` in the function `Process()`.  Here is an example of my result on a test image:
 
 ![alt text][image6]
 
@@ -90,7 +90,7 @@ I implemented this step in lines # through # in my code in `yet_another_file.py`
 
 ####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./project_video_out.mp4)
 
 ---
 
