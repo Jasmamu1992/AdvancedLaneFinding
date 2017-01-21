@@ -17,7 +17,7 @@ The goals / steps of this project are the following:
 [image2]: ./output_images/Undistort/Undistort1.png "Undistorted Test Images"
 [image3]: ./output_images/HLS_Sobel_Thresholded/HLS_Sobel_Thresholded1.png "Binary Example"
 [image4]: ./output_images/PerspectiveTransform/PerspectiveTransform1.png "Warp Example"
-[image5]: .output_images/LaneDetection_CurveFitting/LaneDetection_CurveFitting1.png "Fit Visual"
+[image5]: ./output_images/LaneDetection_CurveFitting/LaneDetection_CurveFitting1.png "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video.mp4 "Video"
 
