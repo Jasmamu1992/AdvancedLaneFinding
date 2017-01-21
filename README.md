@@ -14,7 +14,7 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./output_images/CameraCalibration/CameraCalibration.png "Undistorted"
-[image2]: ./test_images/test1.jpg "Road Transformed"
+[image2]: ./output_images/Undistort/Undistort1.png "Road Transformed"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
@@ -37,6 +37,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 ####1. Provide an example of a distortion-corrected image.
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
+You can find other undistorted images at [Rubric](https://github.com/Jasmamu1992/AdvancedLaneFinding/tree/master/output_images/Undistort)
 ![alt text][image2]
 ####2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
